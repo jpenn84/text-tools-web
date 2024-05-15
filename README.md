@@ -21,10 +21,10 @@ The current limitations on what characters' case can be changed is limited by th
 ## API vs Client-Side function
 
 While the same expected results can be made as a JS function and be made fully client-side, the use of an API allows for future expansion, such as training AI models or data collection.
+
 ## Authors
 
 - [@jpenn84](https://www.github.com/jpenn84)
-
 
 ## Badges
 
