@@ -26,3 +26,15 @@ function clearText() {
   $("#outputText").val("");
   textCopied = false;
 }
+
+function submitText() {
+  $.post("https://api1.joshualeepenn.com/mocking-text",
+      JSON.stringify({
+      inputText: $("#inputText").val(),
+      startUpperCase: $("#startUpperCase").is(":checked")
+    }),
+    function(response){
+      // TODO: Handle response, Issue #5
+      console.log(JSON.stringify(response));
+    });
+}
