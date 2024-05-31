@@ -28,13 +28,18 @@ function clearText() {
 }
 
 function submitText() {
-  $.post("https://api1.joshualeepenn.com/mocking-text",
+  let trimmedInputString = $("#inputText").val().trim();
+  if (trimmedInputString.length > 0) {
+    $.post("https://api1.joshualeepenn.com/mocking-text",
       JSON.stringify({
-      inputText: $("#inputText").val(),
-      startUpperCase: $("#startUpperCase").is(":checked")
-    }),
-    function(response){
-      // TODO: Handle response, Issue #5
-      console.log(JSON.stringify(response));
-    });
+        inputText: trimmedInputString,
+        startUpperCase: $("#startUpperCase").is(":checked")
+      }),
+      function (response) {
+        // TODO: Handle response, Issue #5
+        console.log(JSON.stringify(response));
+      });
+  } else {
+    alert("Input text is blank")
+  }
 }
