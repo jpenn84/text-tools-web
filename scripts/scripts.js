@@ -36,8 +36,8 @@ function submitText() {
         startUpperCase: $("#startUpperCase").is(":checked")
       }),
       function (response) {
-        // TODO: Handle response, Issue #5
-        console.log(JSON.stringify(response));
+        let obj = JSON.parse(JSON.stringify(response));
+        $("#outputText").val(obj.convertedText);
       });
   } else {
     alert("Input text is blank")
