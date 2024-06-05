@@ -2,8 +2,13 @@
 var textCopied = false;
 
 function copyOutputText() {
-  // Get the text field
-  var copyText = document.getElementById("outputText");
+  // Get the text from the visible output textarea
+  let copyText;
+  if ($("#startUpperCase").is(":checked")) {
+    copyText = document.getElementById("outputTextUpper");
+  } else {
+    copyText = document.getElementById("outputTextLower");
+  }
 
   // Select the text field
   copyText.select();
@@ -19,11 +24,22 @@ function copyOutputText() {
 }
 
 function clearText() {
+  let inputText = $("#inputText");
+  let outputTextUpper = $("#outputTextUpper")
+  let outputTextLower = $("#outputTextLower")
+  let startUpperCase = $("#startUpperCase")
+
   // If text exists in either text box and has not yet been copied, show confirmation dialog
-  if (!textCopied && ($("#inputText").val().trim().length > 0 || $("#outputText").val().trim().length > 0))
+  if (!textCopied && (
+      inputText.val().trim().length > 0
+      || (outputTextUpper.val().trim().length > 0) && startUpperCase.is(":checked")
+      || (outputTextLower.val().trim().length > 0) && !startUpperCase.is(":checked")
+    )
+  )
     if (!confirm("Clear all?")) return;
-  $("#inputText").val("");
-  $("#outputText").val("");
+  inputText.val("");
+  outputTextUpper.val("");
+  outputTextLower.val("");
   textCopied = false;
 }
 
@@ -37,9 +53,21 @@ function submitText() {
       }),
       function (response) {
         let obj = JSON.parse(JSON.stringify(response));
-        $("#outputText").val(obj.convertedText);
+        //$("#outputText").val(obj.convertedText);
+        $("#outputTextUpper").val(obj.outputUpperCase);
+        $("#outputTextLower").val(obj.outputLowerCase);
       });
   } else {
     alert("Input text is blank")
+  }
+}
+
+function switchCase() {
+  if ($("#startUpperCase").is(":checked")) {
+    $("#outputLower").hide()
+    $("#outputUpper").show()
+  } else {
+    $("#outputUpper").hide()
+    $("#outputLower").show()
   }
 }

@@ -33,20 +33,25 @@
 
             <div>
                 <h4 class="mb-3">MaKeS mOcKiNg TeXt</h4>
-                <div>
+                <div class="mb-3">
                     <label for="inputText">EnTeR tExT</label>
                     <textarea class="form-control" id="inputText" rows="5"></textarea>
                     <button onclick="submitText()" class="btn btn-primary p-2 mt-2 w-100">CoNvErT tO MoCkInG tExT</button>
-
-                    <div class="form-check form-switch mt-3 mb-3">
-                        <input class="form-check-input" type="checkbox" id="startUpperCase" checked>
-                        <label class="form-check-label" for="startUpperCase">StArT wItH uPpEr CaSe</label>
-                    </div>
                 </div>
 
-                <div>
-                    <p>OuTpUt</p>
-                    <textarea class="form-control p-2" id="outputText" rows="5" readonly></textarea>
+                <div class="mb-3">
+                    <div id="outputUpper">
+                        <label for="outputTextUpper">Output</label>
+                        <textarea class="form-control p-2" id="outputTextUpper" rows="5" readonly></textarea>
+                    </div>
+                    <div id="outputLower" style="display: none">
+                        <label for="outputTextLower">Output</label>
+                        <textarea class="form-control p-2" id="outputTextLower" rows="5" readonly></textarea>
+                    </div>
+                    <div class="form-check form-switch mt-3">
+                        <input class="form-check-input" type="checkbox" id="startUpperCase" checked onchange="switchCase()">
+                        <label class="form-check-label" for="startUpperCase">StArT wItH uPpEr CaSe</label>
+                    </div>
                 </div>
 
                 <button class="btn btn-primary p-2 mt-2 w-100" onclick="copyOutputText()">CoPy ouTpUt TeXt</button>
