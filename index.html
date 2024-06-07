@@ -67,20 +67,16 @@
     <!-- Privacy Policy Modal -->
     <div class="modal fade" id="privacyPolicyModal" role="dialog">
         <div class="modal-dialog modal-xl">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Privacy Policy</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="privacyPolicyContent">
-                </div>
+                <div class="modal-body" id="privacyPolicyContent"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -91,7 +87,7 @@
         </div>
     </footer>
     <script>
-        document.getElementById("copyrightYear").innerHTML = new Date().getFullYear();
+        document.getElementById("copyrightYear").innerHTML = new Date().getFullYear().toString();
         $("#privacyPolicyContent").load("privacy-policy.html")
     </script>
 </body>
