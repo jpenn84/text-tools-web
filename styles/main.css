@@ -6,7 +6,7 @@
     line-height: 30px;
 }
 
-a {
+.footerLink {
     color: whitesmoke;
     text-decoration: underline;
 }
