@@ -80,15 +80,37 @@
         </div>
     </div>
 
+    <!-- Terms and Conditions Modal -->
+    <div class="modal fade" id="termsConditionsModal" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Terms & Conditions</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="termsConditionsContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container-fluid bg-dark text-white text-center">
-            <div><a class="footerLink" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a></div>
+            <div>
+                <a class="footerLink" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>
+                 |
+                <a class="footerLink" data-bs-toggle="modal" data-bs-target="#termsConditionsModal">Terms & Conditions</a>
+
+            </div>
             <div>&copy; <span id="copyrightYear"></span> Joshua Lee Penn</div>
         </div>
     </footer>
     <script>
         document.getElementById("copyrightYear").innerHTML = new Date().getFullYear().toString();
         $("#privacyPolicyContent").load("privacy-policy.html")
+        $("#termsConditionsContent").load("terms.html")
     </script>
 </body>
 
