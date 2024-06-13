@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;
@@ -10,3 +10,5 @@
     color: whitesmoke;
     text-decoration: underline;
 }
+
+.footer-buffer { clear: both; height: 70px; }
