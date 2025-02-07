@@ -1,10 +1,10 @@
 {
-    "short_name": "Mocking Text Maker",
-    "name": "Mocking Text Maker: MaKe MoCkInG tExT",
+    "short_name": "Text Tools",
+    "name": "Text Tools",
     "icons": [
         {"src": "/images/icon-192.png", "type": "image/png", "sizes": "192x192"},
         {"src": "/images/icon-512.png", "type": "image/png", "sizes": "512x512"}
     ],
     "display": "standalone",
-    "description": "Make mocking or sarcastic text"
+    "description": "Text transformmation tools"
 }
